@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="phonebookk:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/phonebookk_jar</output-path>
+    <root id="archive" name="phonebookk.jar">
+      <element id="module-output" name="phonebookk" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/sqlite-jdbc-3.23.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

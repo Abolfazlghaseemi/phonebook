@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <MenuBar>
+            <Menu text="فایل">
+                <items>
+                    <MenuItem text="افزودن شخص جدید" onAction="#NewPerson"></MenuItem>
+                    <MenuItem text="افزودن شماره جدید" onAction="#NewNumber"></MenuItem>
+                </items>
+            </Menu>
+        </MenuBar>
+    </top>
+    <center>
+        <TableView fx:id="personTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn prefWidth="250" text="نام" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="Name"></PropertyValueFactory>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="250" text="نام خانوادگی" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="Family"></PropertyValueFactory>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+            <BorderPane.margin>
+                <Insets right="10.0" />
+            </BorderPane.margin>
+        </TableView>
+    </center>
+
+    <right>
+        <GridPane vgap="10" minWidth="300">
+            <VBox spacing="10" alignment="CENTER" GridPane.rowIndex="1">
+                <BorderPane.margin>
+                    <Insets left="10" right="10" ></Insets>
+                </BorderPane.margin>
+
+                <TextField fx:id="firstNameField" promptText="نام"
+                           prefWidth="300"/>
+                <TextField fx:id="lastNameField" promptText="نام خانوادگی"
+                           prefWidth="300"/>
+                <HBox spacing="10" alignment="CENTER">
+                    <Button text="ذخیره" onAction="#SavePerson"/>
+                    <Button text="حذف" onAction="#DeletePerson"/>
+                </HBox>
+
+            </VBox>
+            <VBox spacing="10" alignment="CENTER" GridPane.rowIndex="2">
+                <TableView fx:id="numberTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <columns>
+                        <TableColumn prefWidth="300" text="شماره تلفن" >
+                            <cellValueFactory>
+                                <PropertyValueFactory property="Number"></PropertyValueFactory>
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                    <BorderPane.margin>
+                        <Insets right="10.0" />
+                    </BorderPane.margin>
+                </TableView>
+
+                <TextField fx:id="numberField" promptText="شماره تلفن"
+                           prefWidth="300"/>
+
+                <HBox spacing="10" alignment="CENTER">
+                    <Button text="ذخیره شماره تلفن" onAction="#SaveNumber"/>
+                    <Button text="حذف شماره تلفن" onAction="#DeleteNumber"/>
+                </HBox>
+
+            </VBox>
+        </GridPane>
+    </right>
+</BorderPane>
